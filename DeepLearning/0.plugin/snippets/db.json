@@ -1,0 +1,202 @@
+{
+  "folders": [
+    {
+      "name": "MachineLearning",
+      "parentId": null,
+      "isOpen": true,
+      "isSystem": false,
+      "defaultLanguage": "python",
+      "id": "BKl9KQ08",
+      "createdAt": 1716389100505,
+      "updatedAt": 1716436438257,
+      "icon": "brainfuck"
+    },
+    {
+      "name": "Java",
+      "parentId": null,
+      "isOpen": true,
+      "isSystem": false,
+      "defaultLanguage": "java",
+      "id": "JXFiWGXQ",
+      "createdAt": 1716435091887,
+      "updatedAt": 1716436456469,
+      "icon": "java"
+    },
+    {
+      "name": "JavaScript",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "javascript",
+      "id": "L7jjX7MI",
+      "createdAt": 1716436680946,
+      "updatedAt": 1716436735376,
+      "icon": "javascript"
+    }
+  ],
+  "snippets": [
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "BKl9KQ08",
+      "tagsIds": [],
+      "description": null,
+      "name": "Snippet 1",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "import "
+        }
+      ],
+      "id": "0Q95NleY",
+      "createdAt": 1716389139866,
+      "updatedAt": 1716436481356
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JXFiWGXQ",
+      "tagsIds": [],
+      "description": null,
+      "name": "FileIO",
+      "content": [
+        {
+          "label": "子片段 1",
+          "language": "java",
+          "value": "import org.springframework.web.multipart.MultipartFile;\n\nimport java.io.*;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.regex.Matcher;\nimport java.util.regex.Pattern;\n\n/**\n * 这个类是一个工具类\n * 专门用来做文件的写入和读取\n * @author Jancoyan\n */\npublic class FileIo {\n\n    /**\n     * 删除指定路径html下面的图像文件\n     * @param path 路径\n     */\n    public static boolean deleteImagesInHtmlFile(String path){\n        // 内容\n        List<String> tmp = new ArrayList<>();\n        String content = readFile(path);\n        String regex = \"<img (.*?)>\";\n        Pattern pattern = Pattern.compile(regex);\n        Matcher matcher = pattern.matcher(content);\n        String prefix = path.substring(0, path.lastIndexOf(\"static\"));\n        while (matcher.find()){\n            String temp = matcher.group(1).toString().replace('/', '\\\\');\n            temp =\n                    prefix + temp.substring(temp.indexOf(\"static\"),\n                    temp.lastIndexOf(\"\\\" alt\"));\n            temp = temp.replaceAll(\"[\\\\\\\\]\", Matcher.quoteReplacement(File.separator));\n            tmp.add(temp);\n        }\n        for (String s : tmp){\n            deleteFileIfExists(s);\n        }\n        return true;\n    }\n\n\n\n    /**\n     * 删除指定路径的文件\n     * @param path 文件的全路径\n     */\n    public static void deleteFileIfExists(String path){\n        File file = new File(path);\n        if(file.exists()){\n            file.delete();\n        }\n    }\n\n    /**\n     * 上传保存文件\n     * @param multipartFile 多文件对象\n     * @param directory 文件夹全程\n     * @param fileName 文件名\n     */\n    public static void uploadPicture(MultipartFile multipartFile,\n                                     String directory,\n                                     String fileName){\n        // 文件夹不存在就创建\n        createDirectoryIfNotExists(directory);\n\n        FileOutputStream fileOutputStream = null;\n        String fullPath = directory + \"/\" + fileName;\n\n        try {\n            fileOutputStream = new FileOutputStream(fullPath);\n            // 文件写入\n            fileOutputStream.write(multipartFile.getBytes());\n        } catch (IOException e) {\n            e.printStackTrace();\n        } finally {\n            try {\n                assert fileOutputStream != null;\n                fileOutputStream.close();\n            } catch (IOException e) {\n                e.printStackTrace();\n            }\n        }\n    }\n\n\n    /**\n     * 如果文件夹不存在，就创建文件夹\n     * @param path 文件夹路径\n     */\n    public static void createDirectoryIfNotExists(String path){\n        File file = new File(path);\n        if(!file.isDirectory()){\n            // 递归创建文件夹\n            file.mkdirs();\n        }\n    }\n\n    /**\n     * 写入文件\n     * @param path 文件路径\n     * @param content 文件内容\n     */\n    public static void writeFile(String path, String content) {\n        FileOutputStream fos = null;\n        try {\n            fos = new FileOutputStream(path, true);\n            byte[] bytes = content.getBytes();\n            fos.write(bytes);\n            fos.flush();\n        } catch (IOException e) {\n            e.printStackTrace();\n        } finally {\n            if (fos != null) {\n                try {\n                    fos.close();\n                } catch (IOException e) {\n                    e.printStackTrace();\n                }\n            }\n        }\n    }\n\n    /**\n     * 删除文件\n     * @param path 文件路径\n     */\n    public static boolean deleteFile(String path){\n        File file = new File(path);\n        if(!file.exists()){\n            // 文件不存在\n            return false;\n        }else{\n            file.delete();\n        }\n        return true;\n    }\n\n    /**\n     * 读文件\n     * @param path 文件全路径\n     * @return 文件内容\n     */\n    public static String readFile(String path) {\n        FileReader reader = null;\n        String content = \"\";\n        try {\n            reader = new FileReader(path);\n            //准备一个char数组\n            char[] chars = new char[40];\n            // 开始读\n            int readCount = 0;\n            while((readCount = reader.read(chars)) != -1) {\n                content += new String(chars,0,readCount);\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        } finally {\n            if (reader != null) {\n                try {\n                    reader.close();\n                } catch (IOException e) {\n                    e.printStackTrace();\n                }\n            }\n        }\n        return content;\n    }\n}"
+        }
+      ],
+      "id": "vLHvwOGP",
+      "createdAt": 1716436507442,
+      "updatedAt": 1716436532975
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JXFiWGXQ",
+      "tagsIds": [],
+      "description": null,
+      "name": "Msg",
+      "content": [
+        {
+          "label": "子片段 1",
+          "language": "java",
+          "value": "/**\n * @Author: Yan Jingcun\n * @Date: 2021/5/26\n * @Description:\n * @Version: 1.0\n */\n\nimport java.util.HashMap;\nimport java.util.Map;\n\n/**\n * 通用的返回的类\n *\n * @author Jancoyan\n *\n */\npublic class Msg {\n    //状态码   100-成功    200-失败\n    private int code;\n    //提示信息\n    private String msg;\n\n    //用户要返回给浏览器的数据\n    private Map<String, Object> extend = new HashMap<String, Object>();\n\n    public static Msg success(){\n        Msg result = new Msg();\n        result.setCode(0);\n        result.setMsg(\"\");\n        return result;\n    }\n\n    public static Msg fail(){\n        Msg result = new Msg();\n        result.setCode(200);\n        result.setMsg(\"失败！\");\n        return result;\n    }\n\n    public Msg add(String key,Object value){\n        this.getExtend().put(key, value);\n        return this;\n    }\n\n    public int getCode() {\n        return code;\n    }\n\n    public void setCode(int code) {\n        this.code = code;\n    }\n\n    public String getMsg() {\n        return msg;\n    }\n\n    public void setMsg(String msg) {\n        this.msg = msg;\n    }\n\n    public Map<String, Object> getExtend() {\n        return extend;\n    }\n\n    public void setExtend(Map<String, Object> extend) {\n        this.extend = extend;\n    }\n\n}"
+        }
+      ],
+      "id": "-piVEPlb",
+      "createdAt": 1716436583282,
+      "updatedAt": 1716436592562
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JXFiWGXQ",
+      "tagsIds": [],
+      "description": null,
+      "name": "NetworkUtil",
+      "content": [
+        {
+          "label": "子片段 1",
+          "language": "java",
+          "value": "import org.json.JSONObject;\n\nimport java.io.BufferedReader;\nimport java.io.DataOutputStream;\nimport java.io.InputStreamReader;\nimport java.net.HttpURLConnection;\nimport java.net.URL;\nimport java.nio.charset.StandardCharsets;\n\npublic class NetworkUtils {\n\n    /**\n     * 查找ip归属地\n     * @param ip ip地址\n     * @return\n     */\n    public static String queryAddressByIp(String ip) {\n        String address = null;\n        try {\n            address = getAddress(ip);\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n        return address;\n    }\n\n\n    /**\n     * 获取地址\n     * @param ip\n     * @return\n     * @throws Exception\n     */\n    private static String getAddress(String ip) throws Exception{\n\n        String path = \"https://ip.taobao.com//outGetIpInfo?ip=\" + ip + \"&accessKey=alibaba-inc\";\n        String returnStr = getRs(path);\n        JSONObject json;\n\n        if(returnStr != null){\n            json = new JSONObject(returnStr);\n            if(\"0\".equals(json.get(\"code\").toString())){\n                System.out.println(json);\n                StringBuffer buffer = new StringBuffer();\n                //国家\n                buffer.append(decodeUnicode(json.optJSONObject(\"data\").getString(\"country\")));\n                //省份\n                buffer.append(decodeUnicode(json.optJSONObject(\"data\").getString(\"region\")));\n                //市区\n                buffer.append(decodeUnicode(json.optJSONObject(\"data\").getString(\"city\")));\n                System.out.println(buffer.toString());\n                return buffer.toString();\n            }else{\n                return \"获取地址失败\";\n            }\n        }\n        return null;\n    }\n\n    /**\n     * 从url获取结果\n     * @param path\n     * @param params\n     * @param encoding\n     * @return\n     */\n    private static String getRs(String path){\n\n        URL url = null;\n        HttpURLConnection connection = null;\n\n        try {\n\n            url = new URL(path);\n            // 新建连接实例\n            connection = (HttpURLConnection)url.openConnection();\n\n            // 设置连接超时时间，单位毫秒\n            connection.setConnectTimeout(2000);\n            // 设置读取数据超时时间，单位毫秒\n            connection.setReadTimeout(2000);\n            // 是否打开输出流 true|false\n            connection.setDoInput(true);\n            // 是否打开输入流true|false\n            connection.setDoOutput(true);\n            // 提交方法POST|GET\n            connection.setRequestMethod(\"POST\");\n            // 是否缓存true|false\n            connection.setUseCaches(false);\n            // 打开连接端口\n            connection.connect();\n\n            DataOutputStream out = new DataOutputStream(connection.getOutputStream());\n\n            out.writeBytes(path);\n            out.flush();\n            out.close();\n\n            BufferedReader reader =\n                    new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));\n            StringBuilder buffer = new StringBuilder();\n            String line = \"\";\n\n            while ((line = reader.readLine())!= null) {\n                buffer.append(line);\n            }\n            reader.close();\n            return buffer.toString();\n        } catch (Exception e) {\n            e.printStackTrace();\n        }finally{\n            connection.disconnect();// 关闭连接\n        }\n        return null;\n    }\n\n\n    /**\n     * 对字符串进行解码\n     * @param theString\n     * @return\n     */\n    private static String decodeUnicode(String theString){\n        char aChar;\n        int len = theString.length();\n        StringBuffer buffer = new StringBuffer(len);\n        for (int i = 0; i < len;) {\n            aChar = theString.charAt(i++);\n            if(aChar == '\\\\'){\n                aChar = theString.charAt(i++);\n                if(aChar == 'u'){\n                    int val = 0;\n                    for(int j = 0; j < 4; j++){\n                        aChar = theString.charAt(i++);\n                        switch (aChar) {\n                            case '0':case '1':case '2':case '3':\n                            case '4':case '5':case '6':case '7':\n                            case '8':case '9':\n                                val = (val << 4) + aChar - '0';\n                                break;\n                            case 'a':case 'b':case 'c':case 'd':\n                            case 'e':case 'f':\n                                val = (val << 4) + 10 + aChar - 'a';\n                                break;\n                            case 'A':case 'B':case 'C':case 'D':\n                            case 'E':case 'F':\n                                val = (val << 4) + 10 + aChar - 'A';\n                                break;\n                            default:\n                                throw new IllegalArgumentException(\"Malformed      encoding.\");\n                        }\n                    }\n                    buffer.append((char) val);\n                }else{\n                    if(aChar == 't'){ aChar = '\\t';}\n                    if(aChar == 'r'){ aChar = '\\r';}\n                    if(aChar == 'n'){ aChar = '\\n';}\n                    if(aChar == 'f'){ aChar = '\\f';}\n                    buffer.append(aChar);\n                }\n            }else{\n                buffer.append(aChar);\n            }\n        }\n        return buffer.toString();\n    }\n\n}"
+        }
+      ],
+      "id": "kbNk8Y9q",
+      "createdAt": 1716436606822,
+      "updatedAt": 1716458547374
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JXFiWGXQ",
+      "tagsIds": [],
+      "description": null,
+      "name": "RegexUtil",
+      "content": [
+        {
+          "label": "子片段 1",
+          "language": "java",
+          "value": "public class RegexUtils{\n\n    /**\n     * 把换行的\\n转换为文本的\\n\n     * @param str\n     * @return\n     */\n    public static String NextLineToText(String str){\n        String content = str.replaceAll(\"\\n\", \"\\\\\\\\n\");\n        System.out.println(content);\n        return content;\n    }\n\n}"
+        }
+      ],
+      "id": "4-ChulIa",
+      "createdAt": 1716436617924,
+      "updatedAt": 1716436713058
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JXFiWGXQ",
+      "tagsIds": [],
+      "description": null,
+      "name": "TimeUtil",
+      "content": [
+        {
+          "label": "子片段 1",
+          "language": "java",
+          "value": "/**\n * @Author: Yan Jingcun\n * @Date: 2021/5/28\n * @Description:\n * @Version: 1.0\n */\n\n\nimport java.text.ParseException;\nimport java.text.SimpleDateFormat;\nimport java.util.Date;\n\npublic class TimeUtils {\n\n\n    /**\n     * 获取当前系统时间，格式为 yyyy-MM-dd HH:mm:ss\n     * @return 时间字符串\n     */\n    public static String getCurrentTimeString(){\n        SimpleDateFormat df = new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");//设置日期格式\n        return df.format(new Date());\n    }\n\n\n    /**\n     * 将java Date 将对象转化为日期字符串形式\n     * @param date\n     * @return\n     */\n    public static String castDateTypeToDateString(Date date){\n        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(\"yyyy-MM-dd\");\n        return simpleDateFormat.format(date);\n    }\n\n\n    /**\n     * 把日期字符串转化为 yyyy-MM-dd 日期类型\n     * @param dateStr 日期字符串\n     * @return 日期类型\n     */\n    public static Date castDateStringToDateTypeYMD(String dateStr){\n        Date date = null;\n        SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd\");\n        try {\n            date = sdf.parse(dateStr);\n        } catch (ParseException e) {\n            e.printStackTrace();\n        }\n        return date;\n    }\n\n}"
+        }
+      ],
+      "id": "Od-h3wBm",
+      "createdAt": 1716436641287,
+      "updatedAt": 1716436709829
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JXFiWGXQ",
+      "tagsIds": [],
+      "description": null,
+      "name": "UserAgentUtil",
+      "content": [
+        {
+          "label": "子片段 1",
+          "language": "java",
+          "value": "/**\n * @Author: Yan Jingcun\n * @Date: 2021/10/15\n * @Description:\n * @Version: 1.0\n */\n\n\nimport eu.bitwalker.useragentutils.Browser;\nimport eu.bitwalker.useragentutils.OperatingSystem;\nimport eu.bitwalker.useragentutils.UserAgent;\nimport org.apache.commons.lang3.StringUtils;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nimport javax.servlet.http.HttpServletRequest;\n\npublic class UserAgentUtils {\n\n    private static Logger logger = LoggerFactory.getLogger(UserAgentUtils.class);\n\n    /**\n     * 根据http获取userAgent信息\n     * @param request\n     * @return\n     */\n    public static String getUserAgent(HttpServletRequest request) {\n        String userAgent=request.getHeader(\"User-Agent\");\n        return userAgent;\n    }\n\n    /**\n     * 根据request获取userAgent，然后解析出osVersion\n     * @param request\n     * @return\n     */\n    public static String getOsVersion(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getOsVersion(userAgent);\n    }\n\n    /**\n     * 根据userAgent解析出osVersion\n     * @param userAgent\n     * @return\n     */\n    public static String getOsVersion(String userAgent) {\n        String osVersion = \"\";\n        if(StringUtils.isBlank(userAgent))\n            return osVersion;\n        String[] strArr = userAgent.substring(userAgent.indexOf(\"(\")+1,\n                userAgent.indexOf(\")\")).split(\";\");\n        if(null == strArr || strArr.length == 0)\n            return osVersion;\n\n        osVersion = strArr[1];\n        logger.info(\"osVersion is:{}\", osVersion);\n        return osVersion;\n    }\n\n    /**\n     * 获取操作系统对象\n     * @param request\n     * @return\n     */\n    private static OperatingSystem getOperatingSystem(String userAgent) {\n        UserAgent agent = UserAgent.parseUserAgentString(userAgent);\n        OperatingSystem operatingSystem = agent.getOperatingSystem();\n        return operatingSystem;\n    }\n\n\n\n    /**\n     * 获取os：Windows/ios/Android\n     * @param request\n     * @return\n     */\n    public static String getOs(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getOs(userAgent);\n    }\n\n    /**\n     * 获取os：Windows/ios/Android\n     * @param request\n     * @return\n     */\n    public static String getOs(String userAgent) {\n        OperatingSystem operatingSystem =  getOperatingSystem(userAgent);\n        String os = operatingSystem.getGroup().getName();\n        logger.info(\"os is:{}\", os);\n        return os;\n    }\n\n\n    /**\n     * 获取deviceType\n     * @param request\n     * @return\n     */\n    public static String getDevicetype(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getDevicetype(userAgent);\n    }\n\n    /**\n     * 获取deviceType\n     * @return\n     */\n    public static String getDevicetype(String userAgent) {\n        OperatingSystem operatingSystem =  getOperatingSystem(userAgent);\n        String deviceType = operatingSystem.getDeviceType().toString();\n        logger.info(\"deviceType is:{}\", deviceType);\n        return deviceType;\n    }\n\n    /**\n     * 获取操作系统的名字\n     * @param request\n     * @return\n     */\n    public static String getOsName(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getOsName(userAgent);\n    }\n\n    /**\n     * 获取操作系统的名字\n     * @return\n     */\n    public static String getOsName(String userAgent) {\n        OperatingSystem operatingSystem =  getOperatingSystem(userAgent);\n        String osName = operatingSystem.getName();\n        logger.info(\"osName is:{}\", osName);\n        return osName;\n    }\n\n\n    /**\n     * 获取device的生产厂家\n     * @param request\n     */\n    public static String getDeviceManufacturer(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getDeviceManufacturer(userAgent);\n    }\n\n    /**\n     * 获取device的生产厂家\n     */\n    public static String getDeviceManufacturer(String userAgent) {\n        OperatingSystem operatingSystem =  getOperatingSystem(userAgent);\n        String deviceManufacturer = operatingSystem.getManufacturer().toString();\n        logger.info(\"deviceManufacturer is:{}\", deviceManufacturer);\n        return deviceManufacturer;\n    }\n\n    /**\n     * 获取浏览器对象\n     * @return\n     */\n    public static Browser getBrowser(String agent) {\n        UserAgent userAgent = UserAgent.parseUserAgentString(agent);\n        Browser browser = userAgent.getBrowser();\n        return browser;\n    }\n\n\n    /**\n     * 获取browser name\n     * @param request\n     * @return\n     */\n    public static String getBorderName(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getBorderName(userAgent);\n    }\n\n    /**\n     * 获取browser name\n     * @return\n     */\n    public static String getBorderName(String userAgent) {\n        Browser browser =  getBrowser(userAgent);\n        String borderName = browser.getName();\n        logger.info(\"borderName is:{}\", borderName);\n        return borderName;\n    }\n\n\n    /**\n     * 获取浏览器的类型\n     * @param request\n     * @return\n     */\n    public static String getBorderType(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getBorderType(userAgent);\n    }\n\n    /**\n     * 获取浏览器的类型\n     * @return\n     */\n    public static String getBorderType(String userAgent) {\n        Browser browser =  getBrowser(userAgent);\n        String borderType = browser.getBrowserType().getName();\n        logger.info(\"borderType is:{}\", borderType);\n        return borderType;\n    }\n\n    /**\n     * 获取浏览器组： CHROME、IE\n     * @param request\n     * @return\n     */\n    public static String getBorderGroup(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getBorderGroup(userAgent);\n    }\n\n    /**\n     * 获取浏览器组： CHROME、IE\n     * @return\n     */\n    public static String getBorderGroup(String userAgent) {\n        Browser browser =  getBrowser(userAgent);\n        String browerGroup = browser.getGroup().getName();\n        logger.info(\"browerGroup is:{}\", browerGroup);\n        return browerGroup;\n    }\n\n    /**\n     * 获取浏览器的生产厂商\n     * @param request\n     * @return\n     */\n    public static String getBrowserManufacturer(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getBrowserManufacturer(userAgent);\n    }\n\n\n    /**\n     * 获取浏览器的生产厂商\n     * @return\n     */\n    public static String getBrowserManufacturer(String userAgent) {\n        Browser browser =  getBrowser(userAgent);\n        String browserManufacturer = browser.getManufacturer().getName();\n        logger.info(\"browserManufacturer is:{}\", browserManufacturer);\n        return browserManufacturer;\n    }\n\n\n    /**\n     * 获取浏览器使用的渲染引擎\n     * @param request\n     * @return\n     */\n    public static String getBorderRenderingEngine(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getBorderRenderingEngine(userAgent);\n    }\n\n    /**\n     * 获取浏览器使用的渲染引擎\n     * @return\n     */\n    public static String getBorderRenderingEngine(String userAgent) {\n        Browser browser =  getBrowser(userAgent);\n        String renderingEngine = browser.getRenderingEngine().name();\n        logger.info(\"renderingEngine is:{}\", renderingEngine);\n        return renderingEngine;\n    }\n\n\n    /**\n     * 获取浏览器版本\n     * @param request\n     * @return\n     */\n    public static String getBrowserVersion(HttpServletRequest request) {\n        String userAgent = getUserAgent(request);\n        return getBrowserVersion(userAgent);\n    }\n\n    /**\n     * 获取浏览器版本\n     * @return\n     */\n    public static String getBrowserVersion(String userAgent) {\n        Browser browser =  getBrowser(userAgent);\n        String borderVersion = browser.getVersion( userAgent).toString();\n        return borderVersion;\n    }\n\n\n    public static void main(String[] args) {\n        String winUserAgent = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\";\n\n        System.out.println(\"浏览器组：\"+getBorderGroup(winUserAgent));\n        System.out.println(\"浏览器名字：\"+getBorderName(winUserAgent));\n        System.out.println(\"浏览器类型\"+getBorderType(winUserAgent));\n        System.out.println(\"浏览器生产商：\"+getBrowserManufacturer(winUserAgent));\n        System.out.println(\"浏览器版本：\"+getBrowserVersion(winUserAgent));\n        System.out.println(\"设备生产厂商:\"+getDeviceManufacturer(winUserAgent));\n        System.out.println(\"设备类型:\"+getDevicetype(winUserAgent));\n        System.out.println(\"设备操作系统：\"+getOs(winUserAgent));\n        System.out.println(\"操作系统的名字：\"+getOsName(winUserAgent));\n        System.out.println(\"操作系统的版本号：\"+getOsVersion(winUserAgent));\n        System.out.println(\"操作系统浏览器的渲染引擎:\"+getBorderRenderingEngine(winUserAgent));\n    }\n}"
+        }
+      ],
+      "id": "qBJpPcuW",
+      "createdAt": 1716436657547,
+      "updatedAt": 1716436707323
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "L7jjX7MI",
+      "tagsIds": [],
+      "description": null,
+      "name": "TimeUtil",
+      "content": [
+        {
+          "label": "子片段 1",
+          "language": "plain_text",
+          "value": "/*\n获取当前日期和时间，格式：\n2021-06-05 08:00:00\n*/\n\nfunction getNowDateTime(timestamp){\n\tvar date = null;\n\tif(timestamp == null){\n\t\tdate = new Date();\n\t} else {\n\t\tdate = new Date(timestamp)\n\t}\n\tvar Y = date.getFullYear() + '-';\n\tvar M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';\n\tvar D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate() + ' ';\n\tvar hh = date.getHours() < 10 ? '0' + date.getHours() : date.getHours() + ':';\n\tvar mm = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes() + ':';\n\tvar ss = date.getSeconds() < 10 ? '0' + date.getDate() : date.getSeconds() ;\n\treturn Y + M + D + ' ' + hh + mm + ss;\n}\n\n/*\n获取当前日期，格式：\n2021-06-05\n*/\nfunction getNowDate(timestamp){\n\tvar date = null;\n\tif(timestamp == null){\n\t\tdate = new Date();\n\t} else {\n\t\tdate = new Date(timestamp)\n\t}\n\tvar Y = date.getFullYear() + '-';\n\tvar M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';\n\tvar D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate() + ' ';\n\treturn Y + M + D;\n}\n\n\n/*\n获取当前时间，格式：\n 08:00:00\n*/\nfunction getNowDate(timestamp){\n\tvar date = null;\n\tif(timestamp == null){\n\t\tdate = new Date();\n\t} else {\n\t\tdate = new Date(timestamp)\n\t}\n\tvar hh = date.getHours() < 10 ? '0' + date.getHours() : date.getHours() + ':';\n\tvar mm = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes() + ':';\n\tvar ss = date.getSeconds() < 10 ? '0' + date.getDate() : date.getSeconds() ;\n\treturn hh + mm + ss;\n}"
+        }
+      ],
+      "id": "EA4-mzMD",
+      "createdAt": 1716436718525,
+      "updatedAt": 1716436778468
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "L7jjX7MI",
+      "tagsIds": [],
+      "description": null,
+      "name": "TimeUtil",
+      "content": [
+        {
+          "label": "子片段 1",
+          "language": "javascript",
+          "value": "/*\n获取当前日期和时间，格式：\n2021-06-05 08:00:00\n*/\n\nfunction getNowDateTime(timestamp){\n\tvar date = null;\n\tif(timestamp == null){\n\t\tdate = new Date();\n\t} else {\n\t\tdate = new Date(timestamp)\n\t}\n\tvar Y = date.getFullYear() + '-';\n\tvar M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';\n\tvar D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate() + ' ';\n\tvar hh = date.getHours() < 10 ? '0' + date.getHours() : date.getHours() + ':';\n\tvar mm = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes() + ':';\n\tvar ss = date.getSeconds() < 10 ? '0' + date.getDate() : date.getSeconds() ;\n\treturn Y + M + D + ' ' + hh + mm + ss;\n}\n\n/*\n获取当前日期，格式：\n2021-06-05\n*/\nfunction getNowDate(timestamp){\n\tvar date = null;\n\tif(timestamp == null){\n\t\tdate = new Date();\n\t} else {\n\t\tdate = new Date(timestamp)\n\t}\n\tvar Y = date.getFullYear() + '-';\n\tvar M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';\n\tvar D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate() + ' ';\n\treturn Y + M + D;\n}\n\n\n/*\n获取当前时间，格式：\n 08:00:00\n*/\nfunction getNowDate(timestamp){\n\tvar date = null;\n\tif(timestamp == null){\n\t\tdate = new Date();\n\t} else {\n\t\tdate = new Date(timestamp)\n\t}\n\tvar hh = date.getHours() < 10 ? '0' + date.getHours() : date.getHours() + ':';\n\tvar mm = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes() + ':';\n\tvar ss = date.getSeconds() < 10 ? '0' + date.getDate() : date.getSeconds() ;\n\treturn hh + mm + ss;\n}"
+        }
+      ],
+      "id": "9K8gauA9",
+      "createdAt": 1716436767795,
+      "updatedAt": 1716436776687
+    }
+  ],
+  "tags": []
+}

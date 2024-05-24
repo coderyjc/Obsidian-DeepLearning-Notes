@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "b6a3e5bdc7cd3a91",
+        "id": "5402b56f1f198385",
         "type": "tabs",
         "children": [
           {
-            "id": "5887f3560f236403",
+            "id": "b3b32c5472c80bb0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": true
+              }
             }
           }
         ]
@@ -57,7 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 278.50909423828125
   },
   "right": {
     "id": "9c85e3b4b9a251bc",
@@ -66,6 +70,7 @@
       {
         "id": "d3f8e4998de49d59",
         "type": "tabs",
+        "dimension": 66.96230598669624,
         "children": [
           {
             "id": "746ecd450e3b79ed",
@@ -73,6 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,17 +95,10 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
-            }
-          },
-          {
-            "id": "21503dc3fdf99fdb",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {}
             }
           },
           {
@@ -113,13 +112,38 @@
                 "searchQuery": ""
               }
             }
+          },
+          {
+            "id": "21503dc3fdf99fdb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "7d20dda50ca0d6b2",
+        "type": "tabs",
+        "dimension": 33.03769401330377,
+        "children": [
+          {
+            "id": "50b5811fa4c8176f",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 288.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -130,6 +154,53 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "5887f3560f236403",
-  "lastOpenFiles": []
+  "active": "21503dc3fdf99fdb",
+  "lastOpenFiles": [
+    "90.扩展/线上讲座/assets/Pasted image 20231231152308.png",
+    "90.扩展/线上讲座/assets/Pasted image 20231231151109.png",
+    "90.扩展/线上讲座/assets/Pasted image 20231231145640.png",
+    "90.扩展/线上讲座/assets/Pasted image 20231231142830.png",
+    "90.扩展/线上讲座/assets/Pasted image 20231231143609.png",
+    "90.扩展/线上讲座/assets/Pasted image 20231231142450.png",
+    "90.扩展/线上讲座/assets/Pasted image 20231231142214.png",
+    "90.扩展/线上讲座/assets/Pasted image 20231231142036.png",
+    "90.扩展/线上讲座/assets",
+    "90.扩展/线上讲座/Opportunities in AI-吴恩达.md",
+    "90.扩展/线上讲座/Prompt Engineering-吴恩达.md",
+    "90.扩展/线上讲座",
+    "90.扩展/新建文件夹",
+    "90.扩展/书籍标注/深度学习入门：基于Python的理论与实现.md",
+    "90.扩展/书籍标注/d2l.md",
+    "90.扩展/书籍标注",
+    "90.扩展/assets/Pasted image 20231231152308.png",
+    "90.扩展/assets/Pasted image 20231231151109.png",
+    "90.扩展/assets/Pasted image 20231231145640.png",
+    "90.扩展/Prompt Engineering-吴恩达.md",
+    "90.扩展/Opportunities in AI-吴恩达.md",
+    "90.扩展/assets",
+    "90.扩展",
+    "30.神经网络",
+    "神经网络",
+    "新建文件夹",
+    "90.讲座/Prompt Engineering-吴恩达.md",
+    "90.讲座/Opportunities in AI-吴恩达.md",
+    "90.讲座/assets",
+    "20.机器学习/AAAMLP/超参数优化.md",
+    "20.机器学习/AAAMLP/评估指标.md",
+    "20.机器学习/AAAMLP/组织机器学习项目.md",
+    "20.机器学习/AAAMLP/组合和堆叠方法.md",
+    "20.机器学习/AAAMLP/特征选择.md",
+    "20.机器学习/AAAMLP/特征工程.md",
+    "20.机器学习/AAAMLP/无监督和有监督学习.md",
+    "20.机器学习/AAAMLP/文本分类或回归方法.md",
+    "20.机器学习/AAAMLP/处理分类变量.md",
+    "20.机器学习/AAAMLP/可重复代码和模型方法.md",
+    "20.机器学习/AAAMLP/图像分类和分割方法.md",
+    "20.机器学习/AAAMLP/准备环境-Miniconda.md",
+    "20.机器学习/AAAMLP/交叉检验.md",
+    "20.机器学习/AAAMLP/index.md",
+    "10.基础工具/Python/Pandas/Pandas-基础知识/Pandas预备知识/_Pandas预备知识.md",
+    "10.基础工具/Python/Pandas/Pandas-基础知识/Pandas预备知识/Python基础.md",
+    "10.基础工具/Python/Pandas/Pandas-基础知识/Pandas预备知识/Pandas预备知识-练习.md"
+  ]
 }

@@ -1,84 +1,8 @@
 {
   "recentFiles": [
     {
-      "basename": "HOME",
-      "path": "HOME.md"
-    },
-    {
-      "basename": "组合和堆叠方法",
-      "path": "3.将来可能/AAAMLP/组合和堆叠方法.md"
-    },
-    {
-      "basename": "图像分类和分割方法",
-      "path": "3.将来可能/AAAMLP/图像分类和分割方法.md"
-    },
-    {
-      "basename": "可重复代码和模型方法",
-      "path": "3.将来可能/AAAMLP/可重复代码和模型方法.md"
-    },
-    {
-      "basename": "PYQT",
-      "path": "1.归档/Python/PYQT/PYQT.md"
-    },
-    {
-      "basename": "HTML-基础知识",
-      "path": "1.归档/前端/HTML&CSS/HTML-基础知识.md"
-    },
-    {
-      "basename": "Pinia-基础知识",
-      "path": "1.归档/前端/Vue.js/Pinia-基础知识.md"
-    },
-    {
-      "basename": "Vue-Router-基础知识",
-      "path": "1.归档/前端/Vue.js/Vue-Router-基础知识.md"
-    },
-    {
-      "basename": "Vuex-基础知识",
-      "path": "1.归档/前端/Vue.js/Vuex-基础知识.md"
-    },
-    {
-      "basename": "anime.js",
-      "path": "1.归档/前端/前端组件库/Anime.js/anime.js.md"
-    },
-    {
-      "basename": "aos.js",
-      "path": "1.归档/前端/前端组件库/Aos/aos.js.md"
-    },
-    {
-      "basename": "Hexo添加搜索文章功能",
-      "path": "1.归档/其他/博客相关/Hexo/Hexo添加搜索文章功能.md"
-    },
-    {
-      "basename": "深度学习入门：基于Python的理论与实现",
-      "path": "1.归档/深度学习/相关书籍/深度学习入门：基于Python的理论与实现.md"
-    },
-    {
-      "basename": "d2l",
-      "path": "2.正在进行/d2l/d2l.md"
-    },
-    {
-      "basename": "1.AlexNet",
-      "path": "2.正在进行/AI论文精读/1.AlexNet.md"
-    },
-    {
       "basename": "README",
-      "path": "2.正在进行/AI论文精读/README.md"
-    },
-    {
-      "basename": "2.ResNet",
-      "path": "2.正在进行/AI论文精读/2.ResNet.md"
-    },
-    {
-      "basename": "安装基于CUDA的PyTorch环境",
-      "path": "1.归档/项目记录/环境问题相关/安装基于CUDA的PyTorch环境.md"
-    },
-    {
-      "basename": "Annaconda安装以及镜像源配置",
-      "path": "1.归档/Python/Annaconda/Annaconda-解决方案/Annaconda安装以及镜像源配置.md"
-    },
-    {
-      "basename": "Python第三方库安装相关",
-      "path": "1.归档/项目记录/环境问题相关/Python第三方库安装相关.md"
+      "path": "README.md"
     }
   ],
   "omittedPaths": [],

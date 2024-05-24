@@ -3,5 +3,6 @@
   "cssTheme": "Obsidianite",
   "monospaceFontFamily": "JetBrains Mono",
   "baseFontSizeAction": true,
-  "nativeMenus": false
+  "nativeMenus": false,
+  "theme": "obsidian"
 }
