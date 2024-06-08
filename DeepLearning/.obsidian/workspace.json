@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5402b56f1f198385",
+        "id": "39553c84268b8b3a",
         "type": "tabs",
         "children": [
           {
-            "id": "b3b32c5472c80bb0",
+            "id": "137dd36579297681",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "source",
+                "file": "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "git安装",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -57,7 +57,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -78,7 +79,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +96,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -119,7 +120,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "10.基础工具/Git/Git-基础知识/Git-基础知识.md"
               }
             }
           }
@@ -154,8 +155,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "21503dc3fdf99fdb",
+  "active": "137dd36579297681",
   "lastOpenFiles": [
+    "10.基础工具/Python/Annaconda/Annaconda-解决方案/Annaconda安装以及镜像源配置.md",
+    "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
+    "README.md",
     "90.扩展/线上讲座/assets/Pasted image 20231231152308.png",
     "90.扩展/线上讲座/assets/Pasted image 20231231151109.png",
     "90.扩展/线上讲座/assets/Pasted image 20231231145640.png",
@@ -174,7 +178,6 @@
     "90.扩展/书籍标注",
     "90.扩展/assets/Pasted image 20231231152308.png",
     "90.扩展/assets/Pasted image 20231231151109.png",
-    "90.扩展/assets/Pasted image 20231231145640.png",
     "90.扩展/Prompt Engineering-吴恩达.md",
     "90.扩展/Opportunities in AI-吴恩达.md",
     "90.扩展/assets",
@@ -199,8 +202,6 @@
     "20.机器学习/AAAMLP/准备环境-Miniconda.md",
     "20.机器学习/AAAMLP/交叉检验.md",
     "20.机器学习/AAAMLP/index.md",
-    "10.基础工具/Python/Pandas/Pandas-基础知识/Pandas预备知识/_Pandas预备知识.md",
-    "10.基础工具/Python/Pandas/Pandas-基础知识/Pandas预备知识/Python基础.md",
-    "10.基础工具/Python/Pandas/Pandas-基础知识/Pandas预备知识/Pandas预备知识-练习.md"
+    "10.基础工具/Python/Pandas/Pandas-基础知识/Pandas预备知识/_Pandas预备知识.md"
   ]
 }
