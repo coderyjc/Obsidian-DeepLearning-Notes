@@ -1,11 +1,11 @@
 [
   "obsidian-admonition",
   "obsidian-annotator",
-  "obsidian-better-codeblock",
   "dataview",
   "metaedit",
   "recent-files-obsidian",
   "obsidian-style-settings",
   "obsidian-latex-suite",
-  "cm-editor-syntax-highlight-obsidian"
+  "cm-editor-syntax-highlight-obsidian",
+  "obsidian-better-codeblock"
 ]

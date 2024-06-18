@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "39553c84268b8b3a",
+        "id": "34a75f761e9d0cc1",
         "type": "tabs",
         "children": [
           {
-            "id": "137dd36579297681",
+            "id": "b77695f4bb46e806",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
-                "mode": "preview",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "git安装",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -57,8 +53,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -79,7 +74,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +90,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -119,9 +112,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "10.基础工具/Git/Git-基础知识/Git-基础知识.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -155,11 +146,20 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "137dd36579297681",
+  "active": "b77695f4bb46e806",
   "lastOpenFiles": [
-    "10.基础工具/Python/Annaconda/Annaconda-解决方案/Annaconda安装以及镜像源配置.md",
-    "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
+    "40.正在进行/Transformer20个面试题.md",
     "README.md",
+    "10.基础工具/Pytorch/Bugs.md",
+    "40.正在进行/Pytorch/pytorch安装torchtext和torchvision.md",
+    "10.基础工具/Linux/man.sh-中文版.md",
+    "10.基础工具/Pytorch/安装基于CUDA的PyTorch环境.md",
+    "40.正在进行/Pytorch/pytorch安装torchtext.md",
+    "10.基础工具/Pytorch",
+    "10.基础工具/Pytorch/pytorch网络结构可视化.md",
+    "40.正在进行",
+    "10.基础工具/Git/Git-基础知识/Git-基础知识.md",
+    "10.基础工具/Python/Annaconda/Annaconda-解决方案/Annaconda安装以及镜像源配置.md",
     "90.扩展/线上讲座/assets/Pasted image 20231231152308.png",
     "90.扩展/线上讲座/assets/Pasted image 20231231151109.png",
     "90.扩展/线上讲座/assets/Pasted image 20231231145640.png",
@@ -184,10 +184,8 @@
     "90.扩展",
     "30.神经网络",
     "神经网络",
-    "新建文件夹",
     "90.讲座/Prompt Engineering-吴恩达.md",
     "90.讲座/Opportunities in AI-吴恩达.md",
-    "90.讲座/assets",
     "20.机器学习/AAAMLP/超参数优化.md",
     "20.机器学习/AAAMLP/评估指标.md",
     "20.机器学习/AAAMLP/组织机器学习项目.md",
@@ -195,13 +193,6 @@
     "20.机器学习/AAAMLP/特征选择.md",
     "20.机器学习/AAAMLP/特征工程.md",
     "20.机器学习/AAAMLP/无监督和有监督学习.md",
-    "20.机器学习/AAAMLP/文本分类或回归方法.md",
-    "20.机器学习/AAAMLP/处理分类变量.md",
-    "20.机器学习/AAAMLP/可重复代码和模型方法.md",
-    "20.机器学习/AAAMLP/图像分类和分割方法.md",
-    "20.机器学习/AAAMLP/准备环境-Miniconda.md",
-    "20.机器学习/AAAMLP/交叉检验.md",
-    "20.机器学习/AAAMLP/index.md",
-    "10.基础工具/Python/Pandas/Pandas-基础知识/Pandas预备知识/_Pandas预备知识.md"
+    "20.机器学习/AAAMLP/文本分类或回归方法.md"
   ]
 }

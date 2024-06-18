@@ -5,7 +5,6 @@ tags:
 - Python/PyTorch
 ---
 
-
 ### 安装CUDA
 
 使用命令 `nvidia-smi` 查看显卡信息
@@ -33,6 +32,20 @@ Tue Apr 30 22:50:40 2024
 +---------------------------------------------------------------------------------------+
 ```
 
+
+
+
+
+---
+
+PyTorch官网中有完备的安装命令，安装pytorch、torchvision、torchaudio、cuda https://pytorch.org/get-started/previous-versions/
+
+cuda设备和显卡驱动对应版本 https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html
+
+---
+
+
+
 上面显示了 CUDA Version: 12.1 ，因此我需要安装版本小于等于12.1的cuda
 
 我安装了12.1： https://developer.nvidia.com/cuda-12-1-0-download-archive
@@ -48,7 +61,7 @@ pip install torch==1.12.0
 pip install torchvision==0.13.0
 ```
 
-GPU版本需要自己指定，如下：
+**GPU版本需要自己指定，如下：**
 
 ```bash
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia

@@ -1,16 +1,48 @@
 {
   "recentFiles": [
     {
+      "basename": "Transformer20个面试题",
+      "path": "40.正在进行/Transformer20个面试题.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "Bugs",
+      "path": "10.基础工具/Pytorch/Bugs.md"
+    },
+    {
+      "basename": "cuda,torch,torchvision,torchtext环境配置方案大总结",
+      "path": "40.正在进行/Pytorch/cuda,torch,torchvision,torchtext环境配置方案大总结.md"
+    },
+    {
+      "basename": "pytorch安装torchtext和torchvision",
+      "path": "40.正在进行/Pytorch/pytorch安装torchtext和torchvision.md"
+    },
+    {
+      "basename": "pytorch安装torchtext",
+      "path": "40.正在进行/Pytorch/pytorch安装torchtext.md"
+    },
+    {
+      "basename": "man.sh-中文版",
+      "path": "10.基础工具/Linux/man.sh-中文版.md"
+    },
+    {
+      "basename": "安装基于CUDA的PyTorch环境",
+      "path": "10.基础工具/Pytorch/安装基于CUDA的PyTorch环境.md"
+    },
+    {
+      "basename": "pytorch网络结构可视化",
+      "path": "10.基础工具/Pytorch/pytorch网络结构可视化.md"
+    },
+    {
       "basename": "Git-基础知识",
       "path": "10.基础工具/Git/Git-基础知识/Git-基础知识.md"
     },
     {
       "basename": "Annaconda安装以及镜像源配置",
       "path": "10.基础工具/Python/Annaconda/Annaconda-解决方案/Annaconda安装以及镜像源配置.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
     }
   ],
   "omittedPaths": [],
