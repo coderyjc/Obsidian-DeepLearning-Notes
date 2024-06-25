@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "34a75f761e9d0cc1",
+        "id": "03de8da991f4cf73",
         "type": "tabs",
         "children": [
           {
-            "id": "b77695f4bb46e806",
+            "id": "1b66ccf2320c9169",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -146,10 +146,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b77695f4bb46e806",
+  "active": "1b66ccf2320c9169",
   "lastOpenFiles": [
-    "40.正在进行/Transformer20个面试题.md",
+    "50.DeepLearning/深度学习调参技巧汇总.md",
     "README.md",
+    "40.正在进行/Transformer20个面试题.md",
     "10.基础工具/Pytorch/Bugs.md",
     "40.正在进行/Pytorch/pytorch安装torchtext和torchvision.md",
     "10.基础工具/Linux/man.sh-中文版.md",
@@ -192,7 +193,6 @@
     "20.机器学习/AAAMLP/组合和堆叠方法.md",
     "20.机器学习/AAAMLP/特征选择.md",
     "20.机器学习/AAAMLP/特征工程.md",
-    "20.机器学习/AAAMLP/无监督和有监督学习.md",
-    "20.机器学习/AAAMLP/文本分类或回归方法.md"
+    "20.机器学习/AAAMLP/无监督和有监督学习.md"
   ]
 }
