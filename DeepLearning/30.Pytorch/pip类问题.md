@@ -1,0 +1,1 @@
+`from ignite.engine improt Engine`安装需要 `pip install pytorch-ignite`

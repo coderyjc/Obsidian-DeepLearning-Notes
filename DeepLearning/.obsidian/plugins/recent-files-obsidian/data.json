@@ -1,12 +1,32 @@
 {
   "recentFiles": [
     {
-      "basename": "深度学习调参技巧汇总",
-      "path": "50.DeepLearning/深度学习调参技巧汇总.md"
+      "basename": "Term整理",
+      "path": "50.DeepLearning/Term整理.md"
+    },
+    {
+      "basename": "Transformer20个面试题",
+      "path": "50.DeepLearning/Transformer20个面试题.md"
+    },
+    {
+      "basename": "VTAB(19 Tasks)",
+      "path": "50.DeepLearning/VTAB(19 Tasks).md"
+    },
+    {
+      "basename": "轻量化神经网络",
+      "path": "50.DeepLearning/轻量化神经网络.md"
     },
     {
       "basename": "README",
       "path": "README.md"
+    },
+    {
+      "basename": "d2l",
+      "path": "11.BookAnnotation/d2l.md"
+    },
+    {
+      "basename": "深度学习调参技巧汇总",
+      "path": "50.DeepLearning/深度学习调参技巧汇总.md"
     },
     {
       "basename": "Transformer20个面试题",
