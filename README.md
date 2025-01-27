@@ -1,6 +1,6 @@
 # 基于Obsidian的深度学习笔记
 
-> **时间紧张，不定期不定量更新...**
+> 本仓库已于2025.01.27作废。目前正在更新[MyNotes-v2](https://github.com/coderyjc/MyNotes-v2)这个仓库。
 
 ## 如何使用？
 
